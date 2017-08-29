@@ -1,6 +1,5 @@
 {
     "name": "vinhhoang/oauth2-azure",
-    "minimum-stability":"dev",
     "description": "Oauth2 Azure login",
     "keywords": ["php", "azure"],
     "type": "library",
@@ -10,6 +9,7 @@
             "name": "Vinh Hoang"
         }
     ],
+	"minimum-stability": "dev",
     "require": {
         "php": ">=5.6"
     },
