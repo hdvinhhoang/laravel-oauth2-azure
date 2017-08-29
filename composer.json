@@ -4,6 +4,7 @@
     "keywords": ["php", "azure"],
     "type": "library",
     "license": "BSD-3-Clause",
+	"minimum-stability":"dev",
     "authors": [
         {
             "name": "Vinh Hoang"
