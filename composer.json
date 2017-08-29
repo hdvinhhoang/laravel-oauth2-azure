@@ -1,15 +1,14 @@
 {
     "name": "vinhhoang/oauth2-azure",
+	"version": "1.0.0",
     "description": "Oauth2 Azure login",
     "keywords": ["php", "azure"],
     "type": "library",
-    "license": "BSD-3-Clause",
     "authors": [
         {
             "name": "Vinh Hoang"
         }
     ],
-	"minimum-stability": "dev",
     "require": {
         "php": ">=5.6"
     },
