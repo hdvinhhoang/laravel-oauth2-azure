@@ -10,6 +10,7 @@ use VinhHoang\OAuth2\Client\Grant\JwtBearer;
 use VinhHoang\OAuth2\Client\Token\AccessToken;
 use Psr\Http\Message\ResponseInterface;
 use \Firebase\JWT\JWT;
+use Illuminate\Http\RedirectResponse;
 
 class Azure extends AbstractProvider
 {
@@ -30,19 +31,24 @@ class Azure extends AbstractProvider
 
     public $authWithResource = true;
 
-    public $config = [];
-
     public function __construct(array $collaborators = [])
     {
-        $this->setConfig();
-        parent::__construct($this->config, $collaborators);
+        //load config
+        $config = config('oauth2azure');
+        $this->tenant = $config['tenant'];
+
+        parent::__construct($config, $collaborators);
         $this->grantFactory->setGrant('jwt_bearer', new JwtBearer);
     }
 
-    private function setConfig()
+    /**
+     * Redirect the user of the application to the provider's authentication screen.
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function redirect()
     {
-        $this->config = config('oauth2azure');
-        $this->tenant = $this->config['tenant'];
+        return new RedirectResponse($this->getAuthorizationUrl());
     }
 
     public function getBaseAuthorizationUrl()
