@@ -32,6 +32,16 @@ class AzureResourceOwner implements ResourceOwnerInterface
     {
         return $this->claim('oid');
     }
+
+    /**
+     * Retrieves tenant email of resource owner.
+     *
+     * @return string|null
+     */
+    public function getEmail()
+    {
+        return $this->claim('email');
+    }
     
     /**
      * Retrieves first name of resource owner.
