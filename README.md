@@ -1,5 +1,7 @@
 # Oauth2 Azure login
 
+This package is built based on this source [Azure Active Directory Provider for OAuth 2.0 Client](https://github.com/TheNetworg/oauth2-azure). 
+
 ## Installation
 
 To install, use composer:
