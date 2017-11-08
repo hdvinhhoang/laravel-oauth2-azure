@@ -51,6 +51,11 @@ class Azure extends AbstractProvider
         return new RedirectResponse($this->getAuthorizationUrl());
     }
 
+    public function setResource($resource) {
+        $this->resource = $resource;
+        $this->urlAPI = $resource . '/v1.0/';
+    }
+
     public function getBaseAuthorizationUrl()
     {
         return $this->urlLogin . $this->tenant . $this->pathAuthorize;
@@ -179,7 +184,7 @@ class Azure extends AbstractProvider
         return $this->wrapResponse($response);
     }
 
-    private function request($method, $ref, &$accessToken, $options = [])
+    public function request($method, $ref, &$accessToken, $options = [])
     {
         if ($accessToken->hasExpired()) {
             $accessToken = $this->getAccessToken('refresh_token', [
