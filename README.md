@@ -28,6 +28,10 @@ Also, add the `Azure` facade to the `aliases` array in your `app` configuration 
 'Azure' =>  VinhHoang\OAuth2\Facades\Azure::class
 ```
 
+Then, run this comment
+
+`php artisan vendor:publish --provider="VinhHoang\OAuth2\AzureServiceProvider"`
+
 You will also need to add credentials for the OAuth services your application utilizes. These credentials should be placed in your `config/oauth2azure.php` configuration file:
 
 ```php
@@ -97,7 +101,7 @@ With version 1.1.0 and onward, the Resource Owner information is parsed from the
 
 **Example:**
 ```php
-$resourceOwner = $provider->getResourceOwner($token);
+$resourceOwner = Azure::getResourceOwner($token);
 echo 'Hello, '.$resourceOwner->getFirstName().'!';
 ```
 The exposed attributes and function are:
