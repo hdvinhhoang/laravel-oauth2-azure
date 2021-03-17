@@ -1,6 +1,5 @@
 {
     "name": "vinhhoang/oauth2-azure",
-	"version": "1.0.1",
     "description": "Oauth2 Azure login",
     "license": "MIT",
     "keywords": ["php", "azure"],
