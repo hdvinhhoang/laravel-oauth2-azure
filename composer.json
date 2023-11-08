@@ -1,5 +1,4 @@
 {
-    "version": "1.0.3",
     "name": "vinhhoang/oauth2-azure",
     "description": "Oauth2 Azure login",
     "license": "MIT",
